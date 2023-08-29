@@ -9,11 +9,11 @@ import {
 
 function UserList() {
   const dispatch = useDispatch();
-  const users = useSelector((state) => state.users);
+  const { users, loading, error } = useSelector((state) => state.users);
 
   useEffect(() => {
     dispatch(fetchUsers());
-  }, []);
+  }, [dispatch]);
 
   const handleCreateUser = () => {
     const newUser = { name: "John Doe", email: "john@example.com" };
@@ -32,6 +32,14 @@ function UserList() {
   const handleDeleteUser = (userId) => {
     dispatch(deleteUser(userId));
   };
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
 
   return (
     <div>

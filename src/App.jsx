@@ -1,6 +1,5 @@
 import CounterWithToolkit from "./components/CounterWithToolkit";
 import ToggleWithToolkit from "./components/ToggleWithToolkit";
-import UserList from "./components/UserList";
 
 const App = () => {
   // const { count } = useSelector((state) => state.counter);
@@ -10,7 +9,7 @@ const App = () => {
       {/* <Counter></Counter> */}
       <ToggleWithToolkit></ToggleWithToolkit>
       <CounterWithToolkit></CounterWithToolkit>
-      <UserList></UserList>
+      {/* <UserList></UserList> */}
     </>
   );
 };
