@@ -1,8 +1,11 @@
+import { useSelector } from "react-redux";
 import CountWithContext from "./components/CountWithContext";
+import CouterWithReduxCore from "./components/CouterWithReduxCore";
 import { useCount } from "./context/count-context";
 
 const App = () => {
   const { state } = useCount();
+  const count = useSelector((state) => state.counter.count);
   return (
     <div className="w-full max-w-[1200px] mx-auto ">
       <div className="mt-[50px] flex flex-col items-center justify-center">
@@ -13,7 +16,11 @@ const App = () => {
             {state.count}
           </span>
         </p>
+        <p className="text-center text-violet-600">
+          CouterWithReduxCore: <span>{count}</span>
+        </p>
         <CountWithContext></CountWithContext>
+        <CouterWithReduxCore></CouterWithReduxCore>
       </div>
     </div>
   );
