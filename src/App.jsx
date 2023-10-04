@@ -2,6 +2,8 @@ import { useSelector } from "react-redux";
 import CountWithContext from "./components/CountWithContext";
 import CouterWithReduxCore from "./components/CouterWithReduxCore";
 import { useCount } from "./context/count-context";
+import ToggleWithRedux from "./components/ToggleWithRedux";
+import EffectComponent from "./components/effectComponent";
 
 const App = () => {
   const { state } = useCount();
@@ -21,6 +23,8 @@ const App = () => {
         </p>
         <CountWithContext></CountWithContext>
         <CouterWithReduxCore></CouterWithReduxCore>
+        <ToggleWithRedux />
+        <EffectComponent />
       </div>
     </div>
   );
